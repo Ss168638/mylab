@@ -1,9 +1,8 @@
-# main.py
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QHBoxLayout, QPushButton, QListWidget, QSplitter
-from PyQt5.QtCore import Qt
-from core.canvas import SimulationCanvas
-from core.properties import PropertyPanel
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QHBoxLayout, QPushButton, QListWidget, QSplitter
+from PyQt6.QtCore import Qt
+from mylab.cores.canvas import SimulationCanvas
+from mylab.cores.properties import PropertyPanel
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -12,7 +11,7 @@ class MainWindow(QMainWindow):
         self.setGeometry(100, 100, 1400, 800)
 
         main_layout = QHBoxLayout()
-        splitter = QSplitter(Qt.Horizontal)
+        splitter = QSplitter(Qt.Orientation.Horizontal)
 
         self.toolbox = QListWidget()
         self.toolbox.addItems(["BP Sensor", "Gain", "LowPassFilter", "HighPassFilter", "ADC", "Display"])
@@ -40,10 +39,11 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(container)
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
-
+if __name__ == "__main__":
+    main()

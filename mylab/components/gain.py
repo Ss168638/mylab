@@ -1,6 +1,7 @@
 # === components/gain.py ===
 from .base import BaseComponent
 import numpy as np
+
 class Gain(BaseComponent):
     def __init__(self):
         super().__init__("Gain")

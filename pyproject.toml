@@ -1,0 +1,22 @@
+[project]
+name = "mylab"
+version = "0.1.0"
+description = "Blood Pressure Simulation Model with GUI, drag-and-drop, NumPy simulation, and C code generation"
+authors = [
+    { name = "Suraj Sharma", email = "ss168638@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pyqt6>=6.0",
+    "numpy>=1.24",
+    "matplotlib>=3.8",
+    "scipy>=1.11"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "mylab.main:main"  # Entry point for the main function in main.py

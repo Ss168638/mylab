@@ -1,6 +1,7 @@
 # === components/lowpass_filter.py ===
 from .base import BaseComponent
 import numpy as np
+
 class LowPassFilter(BaseComponent):
     def __init__(self):
         super().__init__("LowPassFilter")
